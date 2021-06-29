@@ -4,54 +4,56 @@
      
          
   ?>
- 
-    <div id="wrapper">
-  
-    
-    
-        <!-- Navigation -->
-      <?php include 'includes/navigation.php'; ?>
 
-        <div id="page-wrapper">
+<div id="wrapper">
 
-            <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                          WELCOME TO ADMIN
-                            <small>santoshack</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
-                    </div>
+
+    <!-- Navigation -->
+    <?php include 'includes/navigation.php'; ?>
+
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        WELCOME TO ADMIN
+                        <small>santoshack</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-file"></i> Blank Page
+                        </li>
+                    </ol>
                 </div>
-                <!-- /.row -->
-                <div class="col-xs-12">
-    <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-          <th>ID</th>
-            <th>Auther</th> 
-            <th>Title</th> 
-            <th>Category</th> 
-            <th>Status</th> 
-            <th>Image</th> 
-            <th>content</th>
-            <th>Tags</th> 
-            <th>Comments</th>
-            <th>Date</th>  
-      </tr>
-    </thead>
-    <tbody>
-    <?php
+            </div>
+            <!-- /.row -->
+            <div class="col-xs-12">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Auther</th>
+                            <th>Title</th>
+
+                            <th>Status</th>
+                            <th>Image</th>
+                            <th>content</th>
+                            <th>Tags</th>
+
+                            <th>Date</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
          $q ="SELECT * FROM posts";
          $res= mysqli_query($conn,$q);
          while($row = mysqli_fetch_array($res)){
@@ -86,8 +88,8 @@
 
     
     ?>
-    <!--  Delete post-->
-     <?php  
+                        <!--  Delete post-->
+                        <?php  
                     if (isset($_GET['delete'])){
                         $the_post_id = $_GET['delete'];
                         $query= "DELETE FROM posts WHERE post_id= {$the_post_id}";
@@ -95,8 +97,8 @@
                        header("location:post.php");
                     }
                     ?>
-    </tbody>
-    </table>
+                    </tbody>
+                </table>
 
             </div>
             <!-- /.container-fluid -->
@@ -106,6 +108,6 @@
 
     </div>
     <!-- /#wrapper -->
-<?php
+    <?php
 include 'includes/footer.php';
 ?>

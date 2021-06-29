@@ -20,9 +20,21 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "8ba839ea-904f-4cae-a568-3b4b5c27a929";
+    (function() {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+    </script>
 </head>
 
 <body>
+    <?php  include './../Login/bmi/qq.php' ?>
     <!-- data -->
     <?php
    include 'includes/db.php';
@@ -36,61 +48,61 @@
 
 
 
-
-
-
-
-
-
-    <!-- Latest Blog Section End -->
     <!-- Latest Blog Section Begin -->
-
-
 
     <section class="latest-blog-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Latest Blog</h2>
+                        <h2>Exercise Videos </h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <?php
-    $queryp="SELECT * FROM posts ";
+    $queryp="SELECT * FROM video ";
            $resultp= mysqli_query($conn,$queryp);
            while ($row = mysqli_fetch_assoc($resultp)){
-               $post_id = $row['post_id'];
-               $post_title= $row['post_title'];
-               $post_auther= $row['post_auther'];
-               $post_date= $row['post_date'];
-               $post_image= $row['post_image'];
-               $post_content= $row['post_content'];
+               $id = $row['id'];
+               $title= $row['title'];
+               $auther= $row['auther'];
+               $date= $row['date'];
+            //   $post_image= $row['post_image'];
+             //  $post_content= $row['post_content'];
+               $video= $row['video']; 
+               $bmi= $row['bmi'];
 
 
                ?>
+
+
+
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-item">
-                        <h4><b><a> <?php echo $post_title; ?></a></b>
-                        </h4>
-                        <br>
-                        <a href="./../Login/login.php"> <img src="cms/images/<?php echo $post_image;?>" alt=""></a>
-                        <div class="blog-widget">
-                            <div class="bw-date"><?php echo $post_date ;?></div>
-                            <a href="#" class="tag">By <?php echo $post_auther; ?></a>
+                        <div>
+                            <h4><b><a> <?php echo $title; ?></a></b>
+                            </h4>
+                            <br>
                         </div>
-
-                        </h4>
+                        <?php echo $video;?>
+                        <div class="blog-widget">
+                            <div class="bw-date"> <?php echo $date ;?></div>
+                            <a href="#" class="tag">By <?php echo $auther; ?></a>
+                        </div>
+                        <h4>BMI -<a><?php echo  $bmi; ?></a></h4>
                     </div>
                 </div>
-
                 <?php       }
 
-?>
+            ?>
+
             </div>
         </div>
+
     </section>
     <!-- Latest Blog Section End -->
+
 
     <?php include 'footer.php'; ?>

@@ -35,6 +35,7 @@
 
 <body>
     <!-- data -->
+    <?php  include './../Login/bmi/qq.php' ?>
     <?php
    include 'includes/db.php';
    
@@ -97,6 +98,7 @@
 
             </div>
         </div>
+
     </section>
     <!-- Latest Blog Section End -->
 

@@ -48,7 +48,7 @@
                     <ul>
                         <li><a href="./index.php">Home</a></li>
 
-                        <li><a href="cms/index.php">Blog</a></li>
+
 
                         <li class="active"><a href="./contact.php">Contacts</a></li>
                     </ul>
@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <textarea name="message" placeholder="Your messages" required></textarea>
-                                    <button name="submit" type="submit">Pay & Submit</button>
+                                    <button name="submit" type="submit"> Submit</button>
                                 </div>
                             </div>
                         </form>
