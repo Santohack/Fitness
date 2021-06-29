@@ -50,8 +50,10 @@
                     </li>
                 </ul>
             </li>
-            <li class="active">
+            <li>
                 <a href="categories.php"><i class="fa fa-fw fa-file"></i>categoies Page</a>
+            </li> <li>
+                <a href="video.php"><i class="fa fa-fw fa-file"></i>Exercise Videos</a>
             </li>
 
             <li>
