@@ -77,8 +77,9 @@
 ?>
                 <a href="diet.php" class="primary-btn">Get a diet Plan</a><a href="../../cms/index.php"
                     class="primary-btn">Blogs</a><a href="../../gettrainer.php" class="primary-btn">Get Trainer</a><a
-                    href="../../support.php" class="primary-btn">Support Us</a><a href="" class="primary-btn">BMI </a><a
-                    href="../logout.php" class="primary-btn">Logout</a><a class="primary-btn">Hi-
+                    href="../../support.php" class="primary-btn">Support Us</a><a href="../../cms/ex.php"
+                    class="primary-btn">Exercise Videos </a><a href="../logout.php" class="primary-btn">Logout</a><a
+                    class="primary-btn">Hi-
                     <?php echo $_SESSION['username']; ?></a>
 
 
