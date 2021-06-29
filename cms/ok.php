@@ -72,15 +72,15 @@
                ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-item">
-                        <h4><b><a href="cms/index.php"> <?php echo $post_title; ?></a></b>
+                        <h4><b><a> <?php echo $post_title; ?></a></b>
                         </h4>
                         <br>
-                        <img src="cms/images/<?php echo $post_image;?>" alt="">
+                        <a href="./../Login/login.php"> <img src="cms/images/<?php echo $post_image;?>" alt=""></a>
                         <div class="blog-widget">
                             <div class="bw-date"><?php echo $post_date ;?></div>
                             <a href="#" class="tag">By <?php echo $post_auther; ?></a>
                         </div>
-                        <h4><a href="cms/index.php"><?php echo  $post_content; ?></a>
+
                         </h4>
                     </div>
                 </div>

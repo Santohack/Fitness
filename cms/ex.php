@@ -33,8 +33,8 @@
     </script>
 </head>
 
-
 <body>
+    <?php  include './../Login/bmi/qq.php' ?>
     <!-- data -->
     <?php
    include 'includes/db.php';

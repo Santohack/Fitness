@@ -34,7 +34,7 @@
 </head>
 
 <body>
-   
+
 
     <!-- Header Section Begin -->
     <header class="header-section">
@@ -46,7 +46,7 @@
                         <li class="active"><a href="./index.php">Home</a></li>
 
                         <li><a href="contact.php">contact</a></li>
-                        <li><a href="cms/index.php">Blog</a></li>
+
 
                     </ul>
                 </nav>

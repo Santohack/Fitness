@@ -48,7 +48,6 @@
                     <ul>
                         <li><a href="./index.php">Home</a></li>
 
-                        <li><a href="cms/index.php">Blog</a></li>
 
                         <li class="active"><a href="./contact.php">Contacts</a></li>
                     </ul>
