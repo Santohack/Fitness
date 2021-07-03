@@ -1,33 +1,52 @@
 <?php 
-$break_fast_url = "https://api.edamam.com/search?app_id=af4aee2d&app_key=8d471e8eaa6e11b67cf582d6509bc6f7&q=Breakfast%20Snack&";
-$lunch_url = "https://api.edamam.com/search?app_id=af4aee2d&app_key=8d471e8eaa6e11b67cf582d6509bc6f7&q=Lunch&";
-$dinner_url = "https://api.edamam.com/search?app_id=af4aee2d&app_key=8d471e8eaa6e11b67cf582d6509bc6f7&q=Dinner&";
-$request_array = [
-	'to'=>$_POST['planType'],
-	'diet'=>$_POST['diet']
-];
-if($_POST['caltake']=='default'){
-	$calories = '&calories='.'360-500';
-}
-if($_POST['caltake']=='custom'){
-	$calories = '&calories='.$_POST['calories']['min'].'-'.$_POST['calories']['max'];
-}
-$health = '';
-for($i=0;$i< count($_POST['health']);$i++){
-	$health .='&health='.$_POST['health'][$i];
+@ob_start();
+session_start();
+include '../conn.php';
+$user_id = $_SESSION['user_id'];
+$eails ="SELECT * FROM register WHERE id =$user_id";
+$ql = mysqli_query($connection,$eails);
+$result = mysqli_fetch_assoc($ql);
+if(!empty($_POST)){
+	$break_fast_url = "https://api.edamam.com/search?app_id=af4aee2d&app_key=8d471e8eaa6e11b67cf582d6509bc6f7&q=Breakfast%20Snack&";
+	$lunch_url = "https://api.edamam.com/search?app_id=af4aee2d&app_key=8d471e8eaa6e11b67cf582d6509bc6f7&q=Lunch&";
+	$dinner_url = "https://api.edamam.com/search?app_id=af4aee2d&app_key=8d471e8eaa6e11b67cf582d6509bc6f7&q=Dinner&";
+	$request_array = [
+		'to'=>$_POST['planType'],
+		'diet'=>$_POST['diet']
+	];
+	if($_POST['caltake']=='default'){
+		$calories = '&calories='.'360-500';
+	}
+	if($_POST['caltake']=='custom'){
+		$calories = '&calories='.$_POST['calories']['min'].'-'.$_POST['calories']['max'];
+	}
+	$health = '';
+	for($i=0;$i< count($_POST['health']);$i++){
+		$health .='&health='.$_POST['health'][$i];
+	}
+
+
+	$break_fast_url = $break_fast_url.http_build_query($request_array).$calories.$health;
+	$lunch_url = $lunch_url.http_build_query($request_array).$calories.$health;
+	$dinner_url = $dinner_url.http_build_query($request_array).$calories.$health;
+
+	$break_fast_response = get_web_page($break_fast_url);
+	$lunch_response = get_web_page($lunch_url);
+	$dinner_response = get_web_page($dinner_url);
+	
+	$update_query ="update register set break_fast_response = '". $break_fast_response ."', lunch_response = '". $lunch_response ."',dinner_response = '". $dinner_response ."' WHERE id =$user_id";
+	
+	mysqli_query($connection,$update_query);
+	
+}else{
+	$break_fast_response = $result['break_fast_response'];
+	$lunch_response = $result['lunch_response'];
+	$dinner_response = $result['dinner_response'];
 }
 
 
-$break_fast_url = $break_fast_url.http_build_query($request_array).$calories.$health;
-$lunch_url = $lunch_url.http_build_query($request_array).$calories.$health;
-$dinner_url = $dinner_url.http_build_query($request_array).$calories.$health;
-
-$break_fast_response = get_web_page($break_fast_url);
 $break_fastArr = json_decode($break_fast_response);
-
-$lunch_response = get_web_page($lunch_url);
 $lunchArr = json_decode($lunch_response);
-$dinner_response = get_web_page($dinner_url);
 $dinnerArr = json_decode($dinner_response);
 
 
@@ -46,11 +65,8 @@ function get_web_page($url) {
 
     $ch = curl_init($url);
     curl_setopt_array($ch, $options);
-
     $content  = curl_exec($ch);
-
     curl_close($ch);
-
     return $content;
 }
 ?>
@@ -148,18 +164,17 @@ function get_web_page($url) {
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu"></nav>
 
-                <?php
-				/* session_start();
+                <?php				 
 				if(!isset( $_SESSION['username'])){
 					header("location:login.php");
 					exit;
-				} */
+				} 
 				?>
                 <a href="../../cms/index.php" class="primary-btn">Blogs</a><a href="../../gettrainer.php"
                     class="primary-btn">Get Trainer</a><a href="../../support.php" class="primary-btn">Support Us</a><a
                     href="" class="primary-btn">BMI </a><a href="../logout.php" class="primary-btn">Logout</a><a
                     class="primary-btn">Hi-
-                    <?php //echo $_SESSION['username']; ?></a>
+                    <?php echo $_SESSION['username']; ?></a>
 
 
             </div>

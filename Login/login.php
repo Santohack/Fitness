@@ -7,9 +7,12 @@ session_start();
 	
 		$eails ="SELECT * FROM register WHERE username ='$username'  AND password='$password'";
 		$ql = mysqli_query($connection,$eails);
+		
+		$result = mysqli_fetch_assoc($ql);
 		$show =mysqli_num_rows($ql);
 		if($show){
 			$_SESSION['username'] = $username;
+			$_SESSION['user_id'] = $result['id'];
 			header("Location:bmi/index.php");
 		}
 		else{

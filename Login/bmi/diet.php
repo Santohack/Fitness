@@ -1,3 +1,15 @@
+<?php
+@ob_start();
+session_start();
+include '../conn.php';
+$user_id = $_SESSION['user_id'];
+$eails ="SELECT * FROM register WHERE id =$user_id";
+$ql = mysqli_query($connection,$eails);
+$result = mysqli_fetch_assoc($ql);
+if(!empty($result['break_fast_response'])){
+	header("Location:survey_response.php");
+}	
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -68,12 +80,10 @@
                 </nav>
 
                 <?php
- session_start();
- if(!isset( $_SESSION['username'])){
-	 header("location:login.php");
- }
-
-?>
+				if(!isset( $_SESSION['username'])){
+					header("location:login.php");
+				}
+				?>
                 <a href="../../cms/index.php" class="primary-btn">Blogs</a><a href="../../gettrainer.php"
                     class="primary-btn">Get Trainer</a><a href="../../support.php" class="primary-btn">Support Us</a><a
                     href="../../cms/ex.php" class="primary-btn">Exercise videos </a><a href="../logout.php"
