@@ -114,41 +114,54 @@ function get_web_page($url) {
         d.getElementsByTagName("head")[0].appendChild(s);
     })();
     </script>
-	<style>
-	.Meal{
-		text-decoration:none;
-	}
-	.Meal__content {
-		border: 1px solid #e3e3e3;
-		-ms-flex: 1 1;
-		flex: 1 1;
-	}
-	.Meal__content__img img {
-		width: 100%;
-		height: 12rem;
-		-o-object-fit: cover;
-		object-fit: cover;
-	}
-	.Meal__content__desc {
-		padding: 1rem;
-	}
-	.Meal__content__labels {
-		display: flex;
-		flex-flow: row wrap;
-		padding: 1rem;
-	}
-	.Tag {
-		margin: .51rem;
-		border-radius: .5rem;
-		padding: .2rem .61rem;
-		background: #e3e3e3;
-		color: #34495e;
-	}
-	</style>
+    <style>
+    .Meal {
+        text-decoration: none;
+    }
+
+    .Meal__content {
+        border: 1px solid #e3e3e3;
+        -ms-flex: 1 1;
+        flex: 1 1;
+    }
+
+    .Meal__content__img img {
+        width: 100%;
+        height: 12rem;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .Meal__content__desc {
+        padding: 1rem;
+    }
+
+    .Meal__content__labels {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+
+    .Tag {
+        margin: .51rem;
+        border-radius: .5rem;
+        padding: .2rem .61rem;
+        background: #e3e3e3;
+        color: #34495e;
+    }
+    </style>
 </head>
 
 <body>
     <a class="primary-btn">
+        <h4></h4>
+    </a><a class="primary-btn">
+
+    </a><a class="primary-btn">
+        <h4></h4>
+    </a><a class="primary-btn">
+
+    </a><a class="primary-btn">
         <h4></h4>
     </a><a class="primary-btn">
 
@@ -182,7 +195,7 @@ function get_web_page($url) {
         </div>
     </header>
     <!-- Header End -->
-	<!-- Register Section Begin -->
+    <!-- Register Section Begin -->
     <section>
         <div class="container">
             <div class="row">
@@ -191,500 +204,584 @@ function get_web_page($url) {
                         <div class="section-title">
                             <h2>Food Survey</h2>
                         </div>
-						<div class="row">
-							<div class="col-md-12 mx-0">
-								<ul  class="nav nav-pills">
-									<li class="active"><a  href="#1a" data-toggle="tab">Day 1</a></li>
-									<li><a href="#2a" data-toggle="tab">Day 2</a></li>
-									<li><a href="#3a" data-toggle="tab">Day 3</a></li>
-									<li><a href="#4a" data-toggle="tab">Day 4</a></li>
-									<li><a href="#5a" data-toggle="tab">Day 5</a></li>
-									<li><a href="#6a" data-toggle="tab">Day 6</a></li>
-									<li><a href="#7a" data-toggle="tab">Day 7</a></li>
-								</ul>
-								
-								
-								<div class="tab-content clearfix">
-									<div class="tab-pane active" id="1a">
-										<div class="col-sm-4">
-											<h3>Breakfast</h3>											
-											<a href="<?php echo $break_fastArr->hits[0]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $break_fastArr->hits[0]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $break_fastArr->hits[0]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $break_fastArr->hits[0]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($break_fastArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Lunch</h3>											
-											<a href="<?php echo $lunchArr->hits[0]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $lunchArr->hits[0]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $lunchArr->hits[0]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $lunchArr->hits[0]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($lunchArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Dinner</h3>											
-											<a href="<?php echo $dinnerArr->hits[0]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $dinnerArr->hits[0]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $dinnerArr->hits[0]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $dinnerArr->hits[0]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($dinnerArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-									</div>
-									<div class="tab-pane" id="2a">
-										<div class="col-sm-4">
-											<h3>Breakfast</h3>											
-											<a href="<?php echo $break_fastArr->hits[1]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $break_fastArr->hits[1]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $break_fastArr->hits[1]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $break_fastArr->hits[1]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($break_fastArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Lunch</h3>											
-											<a href="<?php echo $lunchArr->hits[1]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $lunchArr->hits[1]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $lunchArr->hits[1]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $lunchArr->hits[1]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($lunchArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Dinner</h3>											
-											<a href="<?php echo $dinnerArr->hits[1]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $dinnerArr->hits[1]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $dinnerArr->hits[1]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $dinnerArr->hits[1]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($dinnerArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-									</div>
-									<div class="tab-pane" id="3a">
-										<div class="col-sm-4">
-											<h3>Breakfast</h3>											
-											<a href="<?php echo $break_fastArr->hits[2]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $break_fastArr->hits[2]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $break_fastArr->hits[2]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $break_fastArr->hits[2]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($break_fastArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Lunch</h3>											
-											<a href="<?php echo $lunchArr->hits[2]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $lunchArr->hits[2]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $lunchArr->hits[2]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $lunchArr->hits[2]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($lunchArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Dinner</h3>											
-											<a href="<?php echo $dinnerArr->hits[2]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $dinnerArr->hits[2]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $dinnerArr->hits[2]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $dinnerArr->hits[2]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($dinnerArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-									</div>
-									<div class="tab-pane" id="4a">
-										<div class="col-sm-4">
-											<h3>Breakfast</h3>											
-											<a href="<?php echo $break_fastArr->hits[3]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $break_fastArr->hits[3]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $break_fastArr->hits[3]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $break_fastArr->hits[3]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($break_fastArr->hits[3]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Lunch</h3>											
-											<a href="<?php echo $lunchArr->hits[3]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $lunchArr->hits[3]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $lunchArr->hits[3]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $lunchArr->hits[3]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($lunchArr->hits[3]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Dinner</h3>											
-											<a href="<?php echo $dinnerArr->hits[3]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $dinnerArr->hits[3]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $dinnerArr->hits[3]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $dinnerArr->hits[3]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($dinnerArr->hits[3]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-									</div>
-									<div class="tab-pane" id="5a">
-										<div class="col-sm-4">
-											<h3>Breakfast</h3>											
-											<a href="<?php echo $break_fastArr->hits[0]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $break_fastArr->hits[0]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $break_fastArr->hits[0]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $break_fastArr->hits[0]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($break_fastArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Lunch</h3>											
-											<a href="<?php echo $lunchArr->hits[0]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $lunchArr->hits[0]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $lunchArr->hits[0]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $lunchArr->hits[0]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($lunchArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Dinner</h3>											
-											<a href="<?php echo $dinnerArr->hits[0]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $dinnerArr->hits[0]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $dinnerArr->hits[0]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $dinnerArr->hits[0]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($dinnerArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-									</div>
-									<div class="tab-pane" id="6a">
-										<div class="col-sm-4">
-											<h3>Breakfast</h3>											
-											<a href="<?php echo $break_fastArr->hits[1]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $break_fastArr->hits[1]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $break_fastArr->hits[1]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $break_fastArr->hits[1]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($break_fastArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Lunch</h3>											
-											<a href="<?php echo $lunchArr->hits[1]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $lunchArr->hits[1]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $lunchArr->hits[1]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $lunchArr->hits[1]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($lunchArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Dinner</h3>											
-											<a href="<?php echo $dinnerArr->hits[1]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $dinnerArr->hits[1]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $dinnerArr->hits[1]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $dinnerArr->hits[1]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($dinnerArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-									</div>
-									<div class="tab-pane" id="7a">
-										<div class="col-sm-4">
-											<h3>Breakfast</h3>											
-											<a href="<?php echo $break_fastArr->hits[2]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $break_fastArr->hits[2]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $break_fastArr->hits[2]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $break_fastArr->hits[2]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($break_fastArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Lunch</h3>											
-											<a href="<?php echo $lunchArr->hits[2]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $lunchArr->hits[2]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $lunchArr->hits[2]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $lunchArr->hits[2]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($lunchArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-										<div class="col-sm-4">
-											<h3>Dinner</h3>											
-											<a href="<?php echo $dinnerArr->hits[2]->recipe->url ?>" class="Meal">
-											<div class="Meal__content">
-												<div class="Meal__content__img">
-													<img src="<?php echo $dinnerArr->hits[2]->recipe->image ?>" alt="Unavailable">
-												</div>
-												<div class="Meal__content__desc">
-													<h2 class="Meal__content__desc--heading"><?php echo $dinnerArr->hits[2]->recipe->label;?></h2>
-													<h4 class="Meal__content__desc--source"><?php echo $dinnerArr->hits[2]->recipe->source ?></h4>
-												</div>
-												<div class="Meal__content__labels">
-													<?php foreach($dinnerArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
-													<div class="Tag undefined">
-														<i class="Tag__icon undefined"></i><span class="Tag__Name"><?php echo $healthLabels;?></span>
-													</div>
-													<?php } ?>
-												</div>
-												
-											</div>
-											</a>
-										</div>
-									</div>
-								</div>						
-							</div>
-						</div>
-					</div>
+                        <div class="row">
+                            <div class="col-md-12 mx-0">
+                                <ul class="nav nav-pills">
+                                    <li class="active"><a href="#1a" data-toggle="tab">Day 1</a></li>
+                                    <li><a href="#2a" data-toggle="tab">Day 2</a></li>
+                                    <li><a href="#3a" data-toggle="tab">Day 3</a></li>
+                                    <li><a href="#4a" data-toggle="tab">Day 4</a></li>
+                                    <li><a href="#5a" data-toggle="tab">Day 5</a></li>
+                                    <li><a href="#6a" data-toggle="tab">Day 6</a></li>
+                                    <li><a href="#7a" data-toggle="tab">Day 7</a></li>
+                                </ul>
+
+
+                                <div class="tab-content clearfix">
+                                    <div class="tab-pane active" id="1a">
+                                        <div class="col-sm-4">
+                                            <h3>Breakfast</h3>
+                                            <a href="<?php echo $break_fastArr->hits[0]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $break_fastArr->hits[0]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $break_fastArr->hits[0]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $break_fastArr->hits[0]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($break_fastArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Lunch</h3>
+                                            <a href="<?php echo $lunchArr->hits[0]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $lunchArr->hits[0]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $lunchArr->hits[0]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $lunchArr->hits[0]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($lunchArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Dinner</h3>
+                                            <a href="<?php echo $dinnerArr->hits[0]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $dinnerArr->hits[0]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $dinnerArr->hits[0]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $dinnerArr->hits[0]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($dinnerArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="2a">
+                                        <div class="col-sm-4">
+                                            <h3>Breakfast</h3>
+                                            <a href="<?php echo $break_fastArr->hits[1]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $break_fastArr->hits[1]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $break_fastArr->hits[1]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $break_fastArr->hits[1]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($break_fastArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Lunch</h3>
+                                            <a href="<?php echo $lunchArr->hits[1]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $lunchArr->hits[1]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $lunchArr->hits[1]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $lunchArr->hits[1]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($lunchArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Dinner</h3>
+                                            <a href="<?php echo $dinnerArr->hits[1]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $dinnerArr->hits[1]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $dinnerArr->hits[1]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $dinnerArr->hits[1]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($dinnerArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="3a">
+                                        <div class="col-sm-4">
+                                            <h3>Breakfast</h3>
+                                            <a href="<?php echo $break_fastArr->hits[2]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $break_fastArr->hits[2]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $break_fastArr->hits[2]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $break_fastArr->hits[2]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($break_fastArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Lunch</h3>
+                                            <a href="<?php echo $lunchArr->hits[2]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $lunchArr->hits[2]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $lunchArr->hits[2]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $lunchArr->hits[2]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($lunchArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Dinner</h3>
+                                            <a href="<?php echo $dinnerArr->hits[2]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $dinnerArr->hits[2]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $dinnerArr->hits[2]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $dinnerArr->hits[2]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($dinnerArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="4a">
+                                        <div class="col-sm-4">
+                                            <h3>Breakfast</h3>
+                                            <a href="<?php echo $break_fastArr->hits[3]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $break_fastArr->hits[3]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $break_fastArr->hits[3]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $break_fastArr->hits[3]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($break_fastArr->hits[3]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Lunch</h3>
+                                            <a href="<?php echo $lunchArr->hits[3]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $lunchArr->hits[3]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $lunchArr->hits[3]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $lunchArr->hits[3]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($lunchArr->hits[3]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Dinner</h3>
+                                            <a href="<?php echo $dinnerArr->hits[3]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $dinnerArr->hits[3]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $dinnerArr->hits[3]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $dinnerArr->hits[3]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($dinnerArr->hits[3]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="5a">
+                                        <div class="col-sm-4">
+                                            <h3>Breakfast</h3>
+                                            <a href="<?php echo $break_fastArr->hits[0]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $break_fastArr->hits[0]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $break_fastArr->hits[0]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $break_fastArr->hits[0]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($break_fastArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Lunch</h3>
+                                            <a href="<?php echo $lunchArr->hits[0]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $lunchArr->hits[0]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $lunchArr->hits[0]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $lunchArr->hits[0]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($lunchArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Dinner</h3>
+                                            <a href="<?php echo $dinnerArr->hits[0]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $dinnerArr->hits[0]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $dinnerArr->hits[0]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $dinnerArr->hits[0]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($dinnerArr->hits[0]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="6a">
+                                        <div class="col-sm-4">
+                                            <h3>Breakfast</h3>
+                                            <a href="<?php echo $break_fastArr->hits[1]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $break_fastArr->hits[1]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $break_fastArr->hits[1]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $break_fastArr->hits[1]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($break_fastArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Lunch</h3>
+                                            <a href="<?php echo $lunchArr->hits[1]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $lunchArr->hits[1]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $lunchArr->hits[1]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $lunchArr->hits[1]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($lunchArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Dinner</h3>
+                                            <a href="<?php echo $dinnerArr->hits[1]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $dinnerArr->hits[1]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $dinnerArr->hits[1]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $dinnerArr->hits[1]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($dinnerArr->hits[1]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="7a">
+                                        <div class="col-sm-4">
+                                            <h3>Breakfast</h3>
+                                            <a href="<?php echo $break_fastArr->hits[2]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $break_fastArr->hits[2]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $break_fastArr->hits[2]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $break_fastArr->hits[2]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($break_fastArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Lunch</h3>
+                                            <a href="<?php echo $lunchArr->hits[2]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $lunchArr->hits[2]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $lunchArr->hits[2]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $lunchArr->hits[2]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($lunchArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h3>Dinner</h3>
+                                            <a href="<?php echo $dinnerArr->hits[2]->recipe->url ?>" class="Meal">
+                                                <div class="Meal__content">
+                                                    <div class="Meal__content__img">
+                                                        <img src="<?php echo $dinnerArr->hits[2]->recipe->image ?>"
+                                                            alt="Unavailable">
+                                                    </div>
+                                                    <div class="Meal__content__desc">
+                                                        <h2 class="Meal__content__desc--heading">
+                                                            <?php echo $dinnerArr->hits[2]->recipe->label;?></h2>
+                                                        <h4 class="Meal__content__desc--source">
+                                                            <?php echo $dinnerArr->hits[2]->recipe->source ?></h4>
+                                                    </div>
+                                                    <div class="Meal__content__labels">
+                                                        <?php foreach($dinnerArr->hits[2]->recipe->healthLabels as $healthLabels) { ?>
+                                                        <div class="Tag undefined">
+                                                            <i class="Tag__icon undefined"></i><span
+                                                                class="Tag__Name"><?php echo $healthLabels;?></span>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -698,6 +795,7 @@ function get_web_page($url) {
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-	
+
 </body>
+
 </html>
