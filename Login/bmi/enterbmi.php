@@ -343,26 +343,9 @@ session_start();
                                 <form id="msform" action="survey_response.php" method="post">
                                     <!-- progressbar -->
                                     <ul id="progressbar">
-                                        <li class="active" id="account"><strong>Meal Plan</strong></li>
-                                        <li id="personal"><strong>Dietary Preferences</strong></li>
-                                        <li id="payment"><strong>Health Preferences</strong></li>
-                                        <li id="confirm"><strong>Calorie</strong></li>
+                                        <li id="dietPreference" class="active"><strong>Dietary Preferences</strong></li>
+                                        <li id="healthPreference"><strong>Health Preferences</strong></li>
                                     </ul> <!-- fieldsets -->
-                                    <fieldset>
-                                        <div class="form-card">
-                                            <h2 class="fs-title">Meal Plan</h2>
-                                            <p>How many meals do you ( or want to have ) in a day?</p>
-                                            <select name="mealCount" class="Select list-dt">
-                                                <option value="3">Three</option>
-                                            </select>
-                                            <p>Choose a plan type</p>
-                                            <select name="planType" class="Select undefined">
-                                                <option value="7">Weekly</option>
-                                                <option value="1">Daily</option>
-                                            </select>
-                                        </div>
-                                        <input type="button" name="next" class="next action-button" value="Next Step" />
-                                    </fieldset>
                                     <fieldset>
                                         <div class="form-card">
                                             <h2 class="fs-title">Any dietary preferences?</h2>
@@ -386,8 +369,6 @@ session_start();
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="button" name="previous" class="previous action-button-previous"
-                                            value="Previous" />
                                         <input type="button" name="next" class="next action-button" value="Next Step" />
                                     </fieldset>
                                     <fieldset>
@@ -422,33 +403,7 @@ session_start();
                                         </div>
                                         <input type="button" name="previous" class="previous action-button-previous"
                                             value="Previous" />
-                                        <input type="button" name="next" class="next action-button" value="Next Step" />
-                                    </fieldset>
-                                    <fieldset>
-                                        <div class="form-card">
-                                            <h2 class="fs-title text-center">Calorie intake</h2> <br><br>
-                                            <div class="RadioGroup undefined">
-                                                <div>
-                                                    <input type="radio" class="Radio caltake" id="_togn2lt9d"
-                                                        name="caltake" value="default">
-                                                    <label for="_togn2lt9d">Go with recommended</label>
-                                                </div>
-                                                <div>
-                                                    <input type="radio" class="Radio caltake" id="_kx2h38b30"
-                                                        name="caltake" value="custom">
-                                                    <label for="_kx2h38b30">Choose custom values</label>
-                                                </div>
-                                            </div>
-                                            <div class="Survey__input" style="display:none">
-                                                <input type="number" placeholder="min" name="calories[min]"
-                                                    value="1800">
-                                                <input type="number" placeholder="max" name="calories[max]"
-                                                    value="2500">
-                                            </div>
-                                        </div>
-                                        <input type="button" name="previous" class="previous action-button-previous"
-                                            value="Previous" />
-                                        <input type="submit" name="next" class="action-button" value="Survey" />
+                                        <input type="submit" name="next" class="next action-button" value="Survey" />
                                     </fieldset>
                                 </form>
                             </div>
@@ -537,14 +492,6 @@ session_start();
                 },
                 duration: 600
             });
-        });
-
-        $(document).on('change', '.caltake', function() {
-            $('.Survey__input').hide();
-            var calValue = $(this).val();
-            if (calValue == 'custom') {
-                $('.Survey__input').show();
-            }
         });
     });
     </script>
