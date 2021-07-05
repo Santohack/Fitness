@@ -12,7 +12,7 @@ if(!empty($_POST)){
 	$dinner_url = "https://api.edamam.com/search?app_id=af4aee2d&app_key=8d471e8eaa6e11b67cf582d6509bc6f7&q=Dinner&";
 	$request_array = [
 		'to'=>7,
-		'diet'=>$_POST['diet'],
+		'diet'=>!empty($_POST['diet'])?$_POST['diet']:'',
 		'calories'=>'360-500'
 	];
 
