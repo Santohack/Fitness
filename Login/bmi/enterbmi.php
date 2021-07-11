@@ -358,14 +358,13 @@ session_start();
                                                 <div>
                                                     <input type="radio" class="Radio" id="_lx6o8l7vi" value="low-carb"
                                                         name="diet">
-                                                    <label for="_lx6o8l7vi">Low-Carb (Less than 20% of total calories
-                                                        from carbs)</label>
+                                                    <label for="_lx6o8l7vi">Low-Carb (More Protein)</label>
                                                 </div>
                                                 <div>
                                                     <input type="radio" class="Radio" id="_wxlhkx5u3" value="low-fat"
                                                         name="diet">
-                                                    <label for="_wxlhkx5u3">Low-Fat (Less than 15% of total calories
-                                                        from fat)</label>
+                                                    <label for="_wxlhkx5u3">More Carbs (Balanced Protein & More
+                                                        calories)</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -375,6 +374,7 @@ session_start();
                                         <div class="form-card">
                                             <h2 class="fs-title">Any health preferences?</h2>
                                             <div class="undefined">
+
                                                 <div class="Checkbox">
                                                     <label for="_7wputmnsq" class="Checkbox__label undefined">
                                                         <input type="checkbox" id="_7wputmnsq" name="health[]"
@@ -390,8 +390,8 @@ session_start();
                                                 <div class="Checkbox">
                                                     <label for="_kmjzikt11" class="Checkbox__label undefined">
                                                         <input type="checkbox" id="_kmjzikt11" name="health[]"
-                                                            value="alcohol-free">Alcohol-free (No alcohol used or
-                                                        contained)</label>
+                                                            value="alcohol-free">Gluten-free (It increases
+                                                        digestion power)</label>
                                                 </div>
                                                 <div class="Checkbox">
                                                     <label for="_ikxc1c1u0" class="Checkbox__label undefined">
