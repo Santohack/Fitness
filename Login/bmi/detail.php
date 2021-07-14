@@ -20,7 +20,7 @@
         <p>Enter Your Profession</p>
         <select class="form-select" aria-label="Default select example">
             <option selected>Open this select menu</option>
-            <option value="1">engineer</option>
+            <option value="1">Engineer</option>
             <option value="2">Doctor</option>
             <option value="3">Military</option>
         </select>
