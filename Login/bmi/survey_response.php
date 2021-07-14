@@ -77,7 +77,7 @@ function get_web_page($url) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="app.js"></script>
-    <title>BMI</title>
+    <title>Diet Plan</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
@@ -199,7 +199,8 @@ function get_web_page($url) {
                 <div class="col-lg-12">
                     <div class="register-text">
                         <div class="section-title">
-                            <h2>Food Survey <a href="enterbmi.php" class="btn btn-primary btn-xs pull-right">New Survey</a></h2>
+                            <h2>Food Survey <a href="enterbmi.php" class="btn btn-primary btn-xs pull-right">New
+                                    Survey</a></h2>
                         </div>
                         <div class="row">
                             <div class="col-md-12 mx-0">
@@ -216,8 +217,8 @@ function get_web_page($url) {
 
                                 <div class="tab-content clearfix">
                                     <div class="tab-pane active" id="1a">
-                                       <?php if(!empty($break_fastArr->hits)) { ?>
-									   <div class="col-sm-4">
+                                        <?php if(!empty($break_fastArr->hits)) { ?>
+                                        <div class="col-sm-4">
                                             <h3>Breakfast</h3>
                                             <a href="<?php echo $break_fastArr->hits[0]->recipe->url ?>" class="Meal">
                                                 <div class="Meal__content">
@@ -243,8 +244,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-									   <?php } ?>
-										<?php if(!empty($lunchArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($lunchArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Lunch</h3>
                                             <a href="<?php echo $lunchArr->hits[0]->recipe->url ?>" class="Meal">
@@ -271,8 +272,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($dinnerArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($dinnerArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Dinner</h3>
                                             <a href="<?php echo $dinnerArr->hits[0]->recipe->url ?>" class="Meal">
@@ -299,11 +300,11 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
+                                        <?php } ?>
                                     </div>
                                     <div class="tab-pane" id="2a">
                                         <?php if(!empty($break_fastArr->hits)) { ?>
-										<div class="col-sm-4">
+                                        <div class="col-sm-4">
                                             <h3>Breakfast</h3>
                                             <a href="<?php echo $break_fastArr->hits[1]->recipe->url ?>" class="Meal">
                                                 <div class="Meal__content">
@@ -329,8 +330,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($lunchArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($lunchArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Lunch</h3>
                                             <a href="<?php echo $lunchArr->hits[1]->recipe->url ?>" class="Meal">
@@ -357,9 +358,9 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
+                                        <?php } ?>
                                         <?php if(!empty($dinnerArr->hits)) { ?>
-										<div class="col-sm-4">
+                                        <div class="col-sm-4">
                                             <h3>Dinner</h3>
                                             <a href="<?php echo $dinnerArr->hits[1]->recipe->url ?>" class="Meal">
                                                 <div class="Meal__content">
@@ -385,10 +386,10 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
+                                        <?php } ?>
                                     </div>
                                     <div class="tab-pane" id="3a">
-									<?php if(!empty($break_fastArr->hits)) { ?>
+                                        <?php if(!empty($break_fastArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Breakfast</h3>
                                             <a href="<?php echo $break_fastArr->hits[2]->recipe->url ?>" class="Meal">
@@ -415,8 +416,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($lunchArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($lunchArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Lunch</h3>
                                             <a href="<?php echo $lunchArr->hits[2]->recipe->url ?>" class="Meal">
@@ -443,8 +444,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($dinnerArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($dinnerArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Dinner</h3>
                                             <a href="<?php echo $dinnerArr->hits[2]->recipe->url ?>" class="Meal">
@@ -471,10 +472,10 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
+                                        <?php } ?>
                                     </div>
                                     <div class="tab-pane" id="4a">
-									<?php if(!empty($break_fastArr->hits)) { ?>
+                                        <?php if(!empty($break_fastArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Breakfast</h3>
                                             <a href="<?php echo $break_fastArr->hits[3]->recipe->url ?>" class="Meal">
@@ -501,8 +502,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($lunchArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($lunchArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Lunch</h3>
                                             <a href="<?php echo $lunchArr->hits[3]->recipe->url ?>" class="Meal">
@@ -529,8 +530,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($dinnerArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($dinnerArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Dinner</h3>
                                             <a href="<?php echo $dinnerArr->hits[3]->recipe->url ?>" class="Meal">
@@ -557,11 +558,11 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
+                                        <?php } ?>
                                     </div>
                                     <div class="tab-pane" id="5a">
                                         <?php if(!empty($break_fastArr->hits)) { ?>
-										<div class="col-sm-4">
+                                        <div class="col-sm-4">
                                             <h3>Breakfast</h3>
                                             <a href="<?php echo $break_fastArr->hits[0]->recipe->url ?>" class="Meal">
                                                 <div class="Meal__content">
@@ -587,8 +588,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($lunchArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($lunchArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Lunch</h3>
                                             <a href="<?php echo $lunchArr->hits[0]->recipe->url ?>" class="Meal">
@@ -615,8 +616,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($dinnerArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($dinnerArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Dinner</h3>
                                             <a href="<?php echo $dinnerArr->hits[0]->recipe->url ?>" class="Meal">
@@ -643,10 +644,10 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
+                                        <?php } ?>
                                     </div>
                                     <div class="tab-pane" id="6a">
-										<?php if(!empty($break_fastArr->hits)) { ?>
+                                        <?php if(!empty($break_fastArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Breakfast</h3>
                                             <a href="<?php echo $break_fastArr->hits[1]->recipe->url ?>" class="Meal">
@@ -673,8 +674,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($lunchArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($lunchArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Lunch</h3>
                                             <a href="<?php echo $lunchArr->hits[1]->recipe->url ?>" class="Meal">
@@ -701,8 +702,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($dinnerArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($dinnerArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Dinner</h3>
                                             <a href="<?php echo $dinnerArr->hits[1]->recipe->url ?>" class="Meal">
@@ -729,11 +730,11 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
+                                        <?php } ?>
                                     </div>
-									
+
                                     <div class="tab-pane" id="7a">
-										<?php if(!empty($break_fastArr->hits)) { ?>
+                                        <?php if(!empty($break_fastArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Breakfast</h3>
                                             <a href="<?php echo $break_fastArr->hits[2]->recipe->url ?>" class="Meal">
@@ -760,8 +761,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($lunchArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($lunchArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Lunch</h3>
                                             <a href="<?php echo $lunchArr->hits[2]->recipe->url ?>" class="Meal">
@@ -788,8 +789,8 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
-										<?php if(!empty($dinnerArr->hits)) { ?>
+                                        <?php } ?>
+                                        <?php if(!empty($dinnerArr->hits)) { ?>
                                         <div class="col-sm-4">
                                             <h3>Dinner</h3>
                                             <a href="<?php echo $dinnerArr->hits[2]->recipe->url ?>" class="Meal">
@@ -816,7 +817,7 @@ function get_web_page($url) {
                                                 </div>
                                             </a>
                                         </div>
-										<?php } ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
