@@ -9,11 +9,16 @@ $result = mysqli_fetch_assoc($ql);
 if(!empty($result['break_fast_response'])){
 	header("Location:survey_response.php");
 }	
+if(!empty($result['category_id'])){
+	header("Location:enterbmi.php");
+}	
 if(!empty($_POST['category_id'])){
 	$category_id = $_POST['category_id'];
 	$user_id = $_SESSION['user_id'];
 	$eails ="Update register set category_id= $category_id, break_fast_response='', lunch_response = '', dinner_response= '' WHERE id =$user_id";
 	$ql = mysqli_query($connection,$eails);
+	header("Location:enterbmi.php");
+	
 }
 
 ?>
@@ -117,7 +122,7 @@ if(!empty($_POST['category_id'])){
                             <h2>Diet Plan</h2>
 
                         </div>
-                        <form action="#" class="register-form">
+                        <form action="#" class="register-form" method="POST">
                             <div class="row">
                                 <div class="col-lg-4">
 									<p>Enter Your Profession</p>
@@ -129,7 +134,7 @@ if(!empty($_POST['category_id'])){
 									</select>
                                 </div>
                             </div>
-                            <a href="enterbmi.php" class="primary-btn">Next</a>
+                            <input type="submit" class="primary-btn" value="Next" style="width:auto;color:white;">
 
                         </form>
                         <div><br>
