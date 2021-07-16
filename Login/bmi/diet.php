@@ -9,6 +9,13 @@ $result = mysqli_fetch_assoc($ql);
 if(!empty($result['break_fast_response'])){
 	header("Location:survey_response.php");
 }	
+if(!empty($_POST['category_id'])){
+	$category_id = $_POST['category_id'];
+	$user_id = $_SESSION['user_id'];
+	$eails ="Update register set category_id= $category_id, break_fast_response='', lunch_response = '', dinner_response= '' WHERE id =$user_id";
+	$ql = mysqli_query($connection,$eails);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -113,14 +120,14 @@ if(!empty($result['break_fast_response'])){
                         <form action="#" class="register-form">
                             <div class="row">
                                 <div class="col-lg-4">
-
-
+									<p>Enter Your Profession</p>
+									<select class="form-select" aria-label="Default select example" name="category_id">
+										<option selected>Open this select menu</option>
+										<option value="1">Engineer</option>
+										<option value="2">Doctor</option>
+										<option value="3">Military</option>
+									</select>
                                 </div>
-                                <?php  include 'detail.php'; ?>
-                                <div class="col-lg-4">
-
-                                </div>
-
                             </div>
                             <a href="enterbmi.php" class="primary-btn">Next</a>
 

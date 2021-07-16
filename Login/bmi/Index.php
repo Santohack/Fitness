@@ -7,7 +7,6 @@
     <meta name="keywords" content="unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="app.js"></script>
     <title>BMI</title>
 
     <!-- Google Font -->
@@ -34,6 +33,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="app.js"></script>
     <script type="text/javascript">
     window.$crisp = [];
     window.CRISP_WEBSITE_ID = "8ba839ea-904f-4cae-a568-3b4b5c27a929";
@@ -122,7 +122,7 @@
                                 </div>
 
                             </div>
-                            <button class="primary-btn" id="btn">Calculate Now</button>
+                            <a class="primary-btn" id="btn">Calculate Now</a>
 
                         </form>
                         <div><br>

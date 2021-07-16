@@ -28,6 +28,13 @@ function calculateBMI() {
 		let bmi = (weight / ((height * height)
 							/ 10000)).toFixed(2);
 
+		if(bmi != ""){
+			$.ajax({
+				url: "update_bmi.php",
+				type: "post",
+				data: {bmi:bmi}
+			});
+		}
 		if (bmi < 18.6) result.innerHTML =
 			`Under Weight : <span>${bmi}</span>`;
 
