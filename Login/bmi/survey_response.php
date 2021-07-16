@@ -53,6 +53,12 @@ if(!empty($_POST)){
 		$update_query ="update register set break_fast_response = '". $break_fast_response ."', lunch_response = '". $lunch_response ."',dinner_response = '". $dinner_response ."' WHERE id =$user_id";
 		
 		mysqli_query($connection,$update_query);
+		
+		
+		$insert_query ="insert into history_diet_plan (user_id,bmi,break_fast_response,lunch_response,dinner_response) values( $user_id , '$bmi', '". $break_fast_response ."', lunch_response = '". $lunch_response ."',dinner_response = '". $dinner_response ."' )";
+		
+		mysqli_query($connection,$insert_query);
+	
 	}
 }else{
 	$break_fast_response = $result['break_fast_response'];
